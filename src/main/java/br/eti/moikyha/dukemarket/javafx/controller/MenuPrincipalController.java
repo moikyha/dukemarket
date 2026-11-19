@@ -49,5 +49,25 @@ public class MenuPrincipalController implements Initializable {
 
         }
     }
+    
+    public void btnClientesClick() throws IOException {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("scrClientes.fxml"));
+
+            Scene scene = new Scene(fxmlLoader.load(), 900, 400);
+            Stage stage = new Stage();
+
+            stage.setTitle("CRUD Clientes");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            Logger logger = Logger.getLogger(getClass().getName());
+            logger.log(Level.SEVERE, "Failed to create new Window scr Clientes.", e);
+
+        }
+    }
 
 }
